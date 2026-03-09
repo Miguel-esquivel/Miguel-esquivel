@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="es" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miguel QA | Quality Assurance Freelancer</title>
+  <meta name="description" content="QA Tester freelance especializado en testing manual, automatización y pruebas de API." />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/906/906324.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <style>
+    :root {
+      --bg:#f8fafc; --bg-card:#ffffff; --bg-alt:#f1f5f9;
+      --text:#0f172a; --text-muted:#64748b; --border:#e2e8f0;
+      --accent:#2563eb; --accent-light:#dbeafe; --shadow:rgba(0,0,0,0.07);
+    }
+    html.dark {
+      --bg:#0f172a; --bg-card:#1e293b; --bg-alt:#1e293b;
+      --text:#f1f5f9; --text-muted:#94a3b8; --border:#334155;
+      --accent:#3b82f6; --accent-light:#1e3a5f; --shadow:rgba(0,0,0,0.4);
+    }
+    html { scroll-behavior: smooth; }
+    body { background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,sans-serif; transition:background .3s,color .3s; }
+    .nav-bar { background:var(--bg-card); border-bottom:1px solid var(--border); transition:background .3s,border-color .3s; }
+    .card { background:var(--bg-card); border:1px solid var(--border); transition:background .3s,border-color .3s,box-shadow .3s,transform .3s; }
+    .card:hover { box-shadow:0 20px 40px var(--shadow); transform:translateY(-4px); }
+    .stats-section { background:var(--bg-card); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .platform-section { background:var(--bg-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .platform-card { background:var(--bg-card); border:1px solid var(--border); transition:background .3s,border-color .3s,box-shadow .3s,transform .3s; }
+    .platform-card:hover { box-shadow:0 20px 40px var(--shadow); transform:translateY(-4px); }
+    .testimonial-card { background:var(--bg-alt); border:1px solid var(--border); transition:background .3s,border-color .3s,box-shadow .3s,transform .3s; }
+    .testimonial-section { background:var(--bg-card); transition:background .3s; }
+    .testimonial-card:hover { transform:translateY(-6px); box-shadow:0 20px 40px var(--shadow); }
+    .counter { font-size:42px; font-weight:800; color:var(--accent); }
+    .lang-switcher { display:flex; align-items:center; background:var(--bg-alt); border:1px solid var(--border); border-radius:999px; padding:3px; gap:2px; }
+    .lang-btn { padding:4px 12px; border-radius:999px; font-size:12px; font-weight:700; cursor:pointer; border:none; background:transparent; color:var(--text-muted); transition:background .2s,color .2s; display:flex; align-items:center; gap:5px; }
+    .lang-btn.active { background:var(--accent); color:white; }
+    .lang-btn:not(.active):hover { color:var(--accent); }
+    #darkToggle { background:var(--bg-alt); color:var(--text); border:1px solid var(--border); border-radius:999px; padding:6px 14px; cursor:pointer; font-size:14px; transition:background .3s,color .3s; display:flex; align-items:center; gap:6px; }
+    #darkToggle:hover { background:var(--accent-light); color:var(--accent); }
+    #mobileMenu { display:none; background:var(--bg-card); border-bottom:1px solid var(--border); }
+    #mobileMenu.open { display:block; }
+    #menuToggle { background:none; border:none; cursor:pointer; color:var(--text); font-size:22px; }
+    .hacker-box { background:#0d1117; color:#22c55e; font-family:'Courier New',monospace; padding:30px; border-radius:12px; max-width:800px; margin:auto; box-shadow:0 0 40px rgba(34,197,94,.15); border:1px solid #1a2e1a; }
+    .hacker-line { opacity:0; transform:translateX(-10px); }
+    .hacker-line.show { animation:hackerAppear .5s forwards; }
+    .hacker-line:nth-child(1){animation-delay:.2s} .hacker-line:nth-child(2){animation-delay:.6s}
+    .hacker-line:nth-child(3){animation-delay:1s} .hacker-line:nth-child(4){animation-delay:1.4s}
+    .hacker-line:nth-child(5){animation-delay:1.8s} .hacker-line:nth-child(6){animation-delay:2.2s}
+    .hacker-line:nth-child(7){animation-delay:2.6s} .hacker-line:nth-child(8){animation-delay:3s}
+    @keyframes hackerAppear { to { opacity:1; transform:translateX(0); } }
+    .swiper { padding-bottom:40px !important; overflow:hidden; }
+    .swiper-slide { height:auto !important; display:flex; justify-content:center; align-items:stretch; }
+    .swiper-slide > div { width:100%; max-width:480px; }
+    .swiper-pagination { bottom:0 !important; }
+    .swiper-pagination-bullet { background:var(--accent) !important; opacity:.4; }
+    .swiper-pagination-bullet-active { opacity:1 !important; }
+    .whatsapp-float { position:fixed; width:58px; height:58px; bottom:28px; right:28px; background:#25d366; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 8px 24px rgba(37,211,102,.4); z-index:100; transition:transform .3s,box-shadow .3s; }
+    .whatsapp-float:hover { transform:scale(1.12); box-shadow:0 12px 32px rgba(37,211,102,.5); }
+    .site-footer { background:#0f172a; color:#f1f5f9; }
+    html.dark .site-footer { background:#020617; }
+    .pricing-section { background:var(--bg); transition:background .3s; }
+    .pricing-card { background:var(--bg-card); border:1px solid var(--border); border-radius:24px; transition:background .3s,border-color .3s,box-shadow .3s,transform .3s; position:relative; overflow:hidden; }
+    .pricing-card:hover { transform:translateY(-6px); box-shadow:0 24px 48px var(--shadow); }
+    .pricing-card.featured { border:2px solid var(--accent); transform:scale(1.03); }
+    .pricing-card.featured:hover { transform:scale(1.03) translateY(-6px); }
+    .pricing-badge { position:absolute; top:0; right:0; background:var(--accent); color:white; font-size:11px; font-weight:700; letter-spacing:.08em; padding:5px 16px; border-bottom-left-radius:12px; text-transform:uppercase; }
+    .pricing-price { font-size:48px; font-weight:900; color:var(--accent); line-height:1; }
+    .pricing-price sup { font-size:22px; font-weight:700; vertical-align:super; margin-right:2px; }
+    .pricing-price span { font-size:16px; font-weight:500; color:var(--text-muted); }
+    .pricing-check { color:var(--accent); margin-right:8px; flex-shrink:0; }
+    .pricing-x { color:#94a3b8; margin-right:8px; flex-shrink:0; }
+    .pricing-feature { display:flex; align-items:flex-start; font-size:14px; margin-bottom:10px; color:var(--text); }
+    .pricing-feature.disabled { color:var(--text-muted); text-decoration:line-through; opacity:.55; }
+    .pricing-btn { display:block; width:100%; text-align:center; padding:14px; border-radius:12px; font-weight:700; font-size:15px; transition:opacity .2s,transform .2s; margin-top:28px; }
+    .pricing-btn:hover { opacity:.88; transform:translateY(-1px); }
+    .pricing-btn-primary { background:var(--accent); color:white; }
+    .pricing-btn-outline { border:2px solid var(--accent); color:var(--accent); background:transparent; }
+    .hero-section { background:var(--bg); transition:background .3s; }
+    .services-section { background:var(--bg); transition:background .3s; }
+    .hacker-section { background:#0f172a; }
+    html.dark .hacker-section { background:#020617; }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+    .hero-section .hero-badge { animation:fadeUp .5s .1s both; }
+    .hero-section h2 { animation:fadeUp .5s .25s both; }
+    .hero-section .hero-desc { animation:fadeUp .5s .4s both; }
+    .hero-section .hero-btns { animation:fadeUp .5s .55s both; }
+    [data-i18n] { transition:opacity .15s ease; }
+    .lang-fade { opacity:0; }
+    .contact-section { background:#0f172a; }
+    html.dark .contact-section { background:#020617; }
+    .contact-input { width:100%; padding:14px 18px; border-radius:12px; font-size:14px; outline:none; transition:border-color .2s,box-shadow .2s; background:#1e293b; border:1px solid #334155; color:#f1f5f9; }
+    .contact-input::placeholder { color:#475569; }
+    .contact-input:focus { border-color:#3b82f6; box-shadow:0 0 0 3px rgba(59,130,246,.15); }
+    .contact-label { display:block; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#64748b; margin-bottom:6px; }
+    .contact-btn { width:100%; padding:16px; border-radius:12px; font-weight:700; font-size:15px; color:white; background:#2563eb; border:none; cursor:pointer; transition:opacity .2s,transform .2s; }
+    .contact-btn:hover:not(:disabled) { opacity:.9; transform:translateY(-1px); }
+    .contact-btn:disabled { opacity:.6; cursor:not-allowed; }
+    .alert-success { background:#052e16; border:1px solid #166534; color:#4ade80; padding:14px 20px; border-radius:12px; font-size:14px; font-weight:600; text-align:center; }
+    .alert-error { background:#2d0a0a; border:1px solid #7f1d1d; color:#f87171; padding:14px 20px; border-radius:12px; font-size:14px; font-weight:600; text-align:center; }
+    /* CAPTCHA */
+    .captcha-box { display:flex; align-items:center; gap:12px; background:#1e293b; border:1px solid #334155; border-radius:12px; padding:14px 18px; transition:border-color .2s,box-shadow .2s; }
+    .captcha-box.error { border-color:#f87171; box-shadow:0 0 0 3px rgba(248,113,113,.15); }
+    .captcha-question { font-size:17px; font-weight:700; color:#f1f5f9; white-space:nowrap; flex-shrink:0; font-family:'Courier New',monospace; letter-spacing:.05em; }
+    .captcha-equals { color:#475569; font-size:20px; font-weight:700; flex-shrink:0; }
+    .captcha-input { flex:1; min-width:0; max-width:80px; background:#0f172a; border:1px solid #334155; border-radius:8px; padding:8px 12px; color:#f1f5f9; font-size:16px; font-weight:700; outline:none; text-align:center; transition:border-color .2s,box-shadow .2s; -moz-appearance:textfield; }
+    .captcha-input::-webkit-inner-spin-button,.captcha-input::-webkit-outer-spin-button { -webkit-appearance:none; }
+    .captcha-input:focus { border-color:#3b82f6; box-shadow:0 0 0 3px rgba(59,130,246,.15); }
+    .captcha-refresh { background:none; border:none; cursor:pointer; color:#475569; font-size:16px; padding:6px; border-radius:6px; transition:color .2s,transform .4s,background .2s; flex-shrink:0; }
+    .captcha-refresh:hover { color:#3b82f6; transform:rotate(180deg); background:rgba(59,130,246,.1); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav-bar p-4 flex justify-between items-center sticky top-0 z-50 backdrop-blur-md">
+  <div class="flex items-center gap-2">
+    <div style="background:var(--accent)" class="text-white p-2 rounded-lg font-bold text-sm">MQ</div>
+    <h1 class="text-xl font-extrabold tracking-tighter uppercase">Miguel <span style="color:var(--accent)">QA</span></h1>
+  </div>
+  <div class="hidden md:flex items-center space-x-5 font-medium text-sm">
+    <a href="#servicios" class="hover:text-blue-500 transition" style="color:var(--text-muted)" data-i18n="nav_services">Servicios</a>
+    <a href="#testimonios" class="hover:text-blue-500 transition" style="color:var(--text-muted)" data-i18n="nav_testimonials">Testimonios</a>
+    <a href="#precios" class="hover:text-blue-500 transition" style="color:var(--text-muted)" data-i18n="nav_pricing">Precios</a>
+    <a href="#plataformas" class="hover:text-blue-500 transition" style="color:var(--text-muted)" data-i18n="nav_hire">Dónde contratarme</a>
+    <div class="lang-switcher">
+      <button class="lang-btn active" id="btnES" onclick="setLang('es')">&#127466;&#127480; ES</button>
+      <button class="lang-btn" id="btnEN" onclick="setLang('en')">&#127482;&#127480; EN</button>
+    </div>
+    <button id="darkToggle">
+      <i class="fas fa-moon" id="darkIcon"></i>
+      <span id="darkLabel" data-i18n="dark_label">Oscuro</span>
+    </button>
+    <a href="#contacto" style="background:var(--accent)" class="text-white px-5 py-2 rounded-full hover:opacity-90 transition shadow-md" data-i18n="nav_contact">Contacto</a>
+  </div>
+  <div class="flex md:hidden items-center gap-3">
+    <div class="lang-switcher" style="padding:2px;gap:1px;">
+      <button class="lang-btn active" style="padding:3px 8px;font-size:11px;" id="btnESm" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" style="padding:3px 8px;font-size:11px;" id="btnENm" onclick="setLang('en')">EN</button>
+    </div>
+    <button id="darkToggleMobile" style="color:var(--text);font-size:18px;background:none;border:none;cursor:pointer;"><i class="fas fa-moon" id="darkIconMobile"></i></button>
+    <button id="menuToggle"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu">
+  <div class="flex flex-col px-6 py-4 gap-4 text-sm font-medium">
+    <a href="#servicios" onclick="closeMobileMenu()" data-i18n="nav_services">Servicios</a>
+    <a href="#testimonios" onclick="closeMobileMenu()" data-i18n="nav_testimonials">Testimonios</a>
+    <a href="#precios" onclick="closeMobileMenu()" data-i18n="nav_pricing">Precios</a>
+    <a href="#plataformas" onclick="closeMobileMenu()" data-i18n="nav_hire">Dónde contratarme</a>
+    <a href="#contacto" style="background:var(--accent)" class="text-white px-4 py-2 rounded-full text-center" onclick="closeMobileMenu()" data-i18n="nav_contact">Contacto</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero-section py-28 px-6 text-center">
+  <span class="hero-badge inline-block text-sm font-bold px-4 py-1 rounded-full uppercase tracking-widest" style="color:var(--accent);background:var(--accent-light)" data-i18n="hero_badge">Garantía de Calidad</span>
+  <h2 class="text-5xl md:text-6xl font-black mt-6 mb-6 tracking-tight leading-tight">
+    <span data-i18n="hero_h1">Encuentro bugs,</span><br/>
+    <span style="color:var(--accent)" data-i18n="hero_h2">antes de que tus usuarios los descubran.</span>
+  </h2>
+  <p class="hero-desc text-lg mb-10 max-w-2xl mx-auto" style="color:var(--text-muted)" data-i18n="hero_desc">Ayudo a desarrolladores y agencias a lanzar productos digitales impecables mediante testing manual y automatizado de alta precisión.</p>
+  <div class="hero-btns flex flex-col sm:flex-row justify-center gap-4">
+    <a href="#plataformas" style="background:var(--accent)" class="text-white px-10 py-4 rounded-xl font-bold hover:opacity-90 transition shadow-xl" data-i18n="hero_btn1">Ver mis perfiles</a>
+    <a href="#servicios" class="card px-10 py-4 rounded-xl font-bold transition" style="color:var(--text)" data-i18n="hero_btn2">Mis servicios</a>
+  </div>
+</header>
+
+<!-- ESTADÍSTICAS -->
+<section class="stats-section py-16">
+  <div class="max-w-5xl mx-auto grid md:grid-cols-3 text-center gap-10 px-6">
+    <div><div class="counter" data-target="1200">0</div><p class="mt-1" style="color:var(--text-muted)" data-i18n="stat_bugs">Bugs encontrados</p></div>
+    <div><div class="counter" data-target="85">0</div><p class="mt-1" style="color:var(--text-muted)" data-i18n="stat_projects">Proyectos testeados</p></div>
+    <div><div class="counter" data-target="7">0</div><p class="mt-1" style="color:var(--text-muted)" data-i18n="stat_years">Años de experiencia</p></div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="services-section py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h3 class="text-3xl font-bold" data-i18n="services_title">Mis Especialidades</h3>
+      <div style="background:var(--accent)" class="h-1 w-20 mx-auto mt-4 rounded-full"></div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="card p-10 rounded-3xl">
+        <div style="color:var(--accent);font-size:28px;" class="mb-4"><i class="fas fa-magnifying-glass"></i></div>
+        <h4 class="text-xl font-bold mb-3" data-i18n="svc1_title">QA Manual</h4>
+        <p class="text-sm" style="color:var(--text-muted)" data-i18n="svc1_desc">Pruebas exhaustivas de interfaz y experiencia de usuario para detectar errores antes del lanzamiento.</p>
+      </div>
+      <div class="card p-10 rounded-3xl" style="border-top:4px solid var(--accent);">
+        <div style="color:var(--accent);font-size:28px;" class="mb-4"><i class="fas fa-robot"></i></div>
+        <h4 class="text-xl font-bold mb-3" data-i18n="svc2_title">Automatización</h4>
+        <p class="text-sm" style="color:var(--text-muted)" data-i18n="svc2_desc">Automatización con Selenium, Playwright y Cypress para mejorar la eficiencia del testing.</p>
+      </div>
+      <div class="card p-10 rounded-3xl">
+        <div style="color:var(--accent);font-size:28px;" class="mb-4"><i class="fas fa-plug"></i></div>
+        <h4 class="text-xl font-bold mb-3" data-i18n="svc3_title">API Testing</h4>
+        <p class="text-sm" style="color:var(--text-muted)" data-i18n="svc3_desc">Validación de APIs usando Postman y pruebas de integración para garantizar estabilidad del backend.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HACKER -->
+<section class="hacker-section py-24">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <h3 class="text-3xl font-bold mb-4 text-white" data-i18n="hacker_title">Escaneo QA en tiempo real</h3>
+    <p class="text-slate-400 mb-12 text-sm" data-i18n="hacker_sub">Así es como trabajo cada proyecto.</p>
+    <div class="hacker-box text-left">
+      <p class="hacker-line text-green-400" data-i18n="hck1">$ iniciando análisis del proyecto...</p>
+      <p class="hacker-line text-green-400" data-i18n="hck2">$ conectando con servidor de pruebas...</p>
+      <p class="hacker-line text-green-400" data-i18n="hck3">$ escaneando interfaz de usuario...</p>
+      <p class="hacker-line text-green-400" data-i18n="hck4">$ validando endpoints de la API...</p>
+      <p class="hacker-line text-green-400" data-i18n="hck5">$ analizando comportamiento en móvil...</p>
+      <p class="hacker-line text-red-400" data-i18n="hck6">&#9888; Bug crítico detectado en checkout &#8594; prioridad alta</p>
+      <p class="hacker-line text-yellow-400" data-i18n="hck7">&#9888; Inconsistencia UI en versión móvil &#8594; media</p>
+      <p class="hacker-line text-green-400" data-i18n="hck8">&#10003; Reporte QA generado — 3 issues encontrados</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios" class="testimonial-section py-24">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h3 class="text-3xl font-bold" data-i18n="test_title">Lo que dicen mis clientes</h3>
+      <div style="background:var(--accent)" class="h-1 w-20 mx-auto mt-4 rounded-full"></div>
+    </div>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><div class="testimonial-card p-8 rounded-2xl text-center w-full">
+          <div class="text-yellow-400 mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="font-semibold mb-1">Volodymyr Grygorovych</p>
+          <p class="text-sm mb-5" style="color:var(--text-muted)">"Miguel did great job."</p>
+          <span class="text-xs font-bold uppercase tracking-widest" style="color:var(--text-muted)" data-i18n="test_upwork_client">Cliente Upwork</span><br/>
+          <a href="https://www.upwork.com/freelancers/~014c750fb6ced1f388?mp_source=share" target="_blank" rel="noopener" class="text-sm font-semibold hover:underline mt-2 inline-block" style="color:var(--accent)" data-i18n="test_see_review">Ver comentario original →</a>
+        </div></div>
+        <div class="swiper-slide"><div class="testimonial-card p-8 rounded-2xl text-center w-full">
+          <div class="text-yellow-400 mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="font-semibold mb-1">Anna M.</p>
+          <p class="text-sm mb-5" style="color:var(--text-muted)">"Everything was amazing!"</p>
+          <span class="text-xs font-bold uppercase tracking-widest" style="color:var(--text-muted)" data-i18n="test_fl_client">Cliente Freelancer</span><br/>
+          <a href="https://www.freelancer.com/u/miguel352" target="_blank" rel="noopener" class="text-sm font-semibold hover:underline mt-2 inline-block" style="color:var(--accent)" data-i18n="test_see_review">Ver comentario original →</a>
+        </div></div>
+        <div class="swiper-slide"><div class="testimonial-card p-8 rounded-2xl text-center w-full">
+          <div class="text-yellow-400 mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="font-semibold mb-1">Native Force</p>
+          <p class="text-sm mb-5" style="color:var(--text-muted)">"The work was completed on time, high quality and fast. I recommend working with this freelancer."</p>
+          <span class="text-xs font-bold uppercase tracking-widest" style="color:var(--text-muted)" data-i18n="test_upwork_client">Cliente Upwork</span><br/>
+          <a href="https://www.upwork.com/freelancers/~014c750fb6ced1f388?mp_source=share" target="_blank" rel="noopener" class="text-sm font-semibold hover:underline mt-2 inline-block" style="color:var(--accent)" data-i18n="test_see_review">Ver comentario original →</a>
+        </div></div>
+        <div class="swiper-slide"><div class="testimonial-card p-8 rounded-2xl text-center w-full">
+          <div class="text-yellow-400 mb-4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="font-semibold mb-1">Steve J. @stevejohnson77</p>
+          <p class="text-sm mb-5" style="color:var(--text-muted)">"Miguel is a great worker. My project has been made with excellence, thanks!"</p>
+          <span class="text-xs font-bold uppercase tracking-widest" style="color:var(--text-muted)" data-i18n="test_fl_client">Cliente Freelancer</span><br/>
+          <a href="https://www.freelancer.com/u/miguel352" target="_blank" rel="noopener" class="text-sm font-semibold hover:underline mt-2 inline-block" style="color:var(--accent)" data-i18n="test_see_review">Ver comentario original →</a>
+        </div></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section id="precios" class="pricing-section py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-6">
+      <span class="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style="background:var(--accent-light);color:var(--accent)" data-i18n="pricing_badge">Planes & Precios</span>
+      <h3 class="text-3xl md:text-4xl font-black" data-i18n="pricing_title">Elige el plan que se adapta<br/>a tu proyecto</h3>
+      <p class="mt-4 max-w-xl mx-auto text-sm" style="color:var(--text-muted)" data-i18n="pricing_sub">Precios competitivos basados en el mercado internacional. Sin costos ocultos.</p>
+    </div>
+    <div class="flex justify-center gap-2 mb-14 mt-8">
+      <button id="toggleFixed" onclick="setPricing('fixed')" class="px-5 py-2 rounded-full text-sm font-bold" style="background:var(--accent);color:white;" data-i18n="pricing_fixed">Precio fijo</button>
+      <button id="toggleHourly" onclick="setPricing('hourly')" class="px-5 py-2 rounded-full text-sm font-bold" style="background:var(--bg-alt);color:var(--text-muted);border:1px solid var(--border)" data-i18n="pricing_hourly">Por hora</button>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 items-start">
+      <div class="pricing-card p-8">
+        <div class="mb-6">
+          <div class="text-xs font-bold uppercase tracking-widest mb-2" style="color:var(--text-muted)">Starter</div>
+          <div class="pricing-price"><sup>$</sup><span id="price-starter" class="text-5xl font-black" style="color:var(--accent)">120</span><span id="suffix-starter" class="text-base ml-1" style="color:var(--text-muted)">/ proyecto</span></div>
+          <p class="text-sm mt-3" style="color:var(--text-muted)" data-i18n="s_desc">Ideal para landing pages, apps simples o MVPs que necesitan una revisión rápida.</p>
+        </div>
+        <hr style="border-color:var(--border);" class="mb-6"/>
+        <div>
+          <div class="pricing-feature"><i class="fas fa-check pricing-check"></i><span data-i18n="s_f1">Testing manual de hasta 10 pantallas</span></div>
+          <div class="pricing-feature"><i class="fas fa-check pricing-check"></i><span data-i18n="s_f2">Reporte de bugs con capturas</span></div>
+          <div class="pricing-feature"><i class="fas fa-check pricing-check"></i><span data-i18n="s_f3">Pruebas de flujos críticos (login, checkout)</span></div>
+          <div class="pricing-feature"><i class="fas fa-check pricing-check"></i><span data-i18n="s_f4">Compatibilidad: 2 navegadores</span></div>
+          <div class="pricing-feature"><i class="fas fa-check pricing-check"></i><span data-i18n="s_f5">Entrega en 2–3 días hábiles</span></div>
+          <div class="pricing-feature disabled"><i class="fas fa-times pricing-x"></i><span data-i18n="s_f6">Testing en móvil</span></div>
+          <div class="pricing-feature disabled"><i class="fas fa-times pricing-x"></i><span data-i18n="s_f7">API Testing</span></div>
+          <div class="pricing-feature disabled"><i class="fas fa-times pricing-x"></i><span data-i18n="s_f8">Scripts de automatización</span></div>
+        </div>
+        <a href="https://wa.me/595993273296?text=Hola%20Miguel,%20me%20interesa%20el%20plan%20Starter" target="_blank" rel="noopener" class="pricing-btn pricing-btn-outline" data-i18n="s_btn">Contratar Starter</a>
+      </div>
+      <div class="pricing-card featured p-8">
+        <div class="pricing-badge" data-i18n="pro_badge">Más popular</div>
+        <div class="mb-6">
+          <div class="text-xs font-bold uppercase tracking-widest mb-2" style="color:var(--accent)">Pro</div>
+          <div class="pricing-price"><sup>$</sup><span id="price-pro" class="text-5xl font-black" style="color:var(--accent)">280</span><span id="suffix-pro" class="text-base ml-1" style="color:var(--text-muted)">/ proyecto</span></div>
+          <p class="text-sm mt-3" style="color:var(--text-muted)" data-i18n="p_desc">Para aplicaciones web y móviles que necesitan cobertura completa antes del lanzamiento.</p>
+        </div>
+        <hr style="border-color:var(--border);" class="mb-6"/>
+        <div>
+          <div class="pricing-feature"><i class="fas fa-check pricing-check"></i><span data-i18n="p_f1">Testing manual de hasta 30 pantallas</span></div>
+          <div class="pricing-feature"><i class="fas fa-check pricing-check"></i><span data-i18n="p_f2">Reporte detallado con severidad de bugs</span></div>
+          <div class="pricing-feature"><i class="fas fa-check pricing-check"></i><span data-i18n="p_f3">Flujos completos + regresión</span></div>
+          <div class="pricing-feature"><i class="fas fa-check pricing-check"></i><span data-i18n="p_f4">Compatibilidad: 4 navegadores + móvil</span></div>
+          <div class="pricing-feature"><i class="fas fa-check pricing-check"></i><span data-i18n="p_f5">API Testing con Postman (hasta 15 endpoints)</span></div>
+          <div class="pricing-feature"><i class="fas fa-check pricing-check"></i><span data-i18n="p_f6">Entrega en 4–5 días hábiles</span></div>
+          <div class="pricing-feature"><i class="fas fa-check pricing-check"></i><span data-i18n="p_f7">1 ronda de re-test incluida</span></div>
+          <div class="pricing-feature disabled"><i class="fas fa-times pricing-x"></i><span data-i18n="p_f8">Scripts de automatización</span></div>
+        </div>
+        <a href="https://wa.me/595993273296?text=Hola%20Miguel,%20me%20interesa%20el%20plan%20Pro" target="_blank" rel="noopener" class="pricing-btn pricing-btn-primary" data-i18n="p_btn">Contratar Pro</a>
+      </div>
+      <div class="pricing-card p-8">
+        <div class="mb-6">
+          <div class="text-xs font-bold uppercase tracking-widest mb-2" style="color:var(--text-muted)">Enterprise</div>
+          <div class="pricing-price"><sup>$</sup><span id="price-enterprise" class="text-5xl font-black" style="color:var(--accent)">550</span><span id="suffix-enterprise" class="text-base ml-1" style="color:var(--text-muted)">/ proyecto</span></div>
+          <p class="text-sm mt-3" style="color:var(--text-muted)" data-i18n="e_desc">Para equipos y productos complejos que requieren automatización, CI/CD y cobertura máxima.</p>
+        </div>
+        <hr style="border-color:var(--border);" class="mb-6"/>
+        <div>
+          <div class="pricing-feature"><i class="fas fa-check pricing-check"></i><span data-i18n="e_f1">Testing manual sin límite de pantallas</span></div>
+          <div class="pricing-feature"><i class="fas fa-check pricing-check"></i><span data-i18n="e_f2">Reporte ejecutivo + métricas de calidad</span></div>
+          <div class="pricing-feature"><i class="fas fa-check pricing-check"></i><span data-i18n="e_f3">Regresión completa + smoke testing</span></div>
+          <div class="pricing-feature"><i class="fas fa-check pricing-check"></i><span data-i18n="e_f4">Multi-navegador + iOS & Android</span></div>
+          <div class="pricing-feature"><i class="fas fa-check pricing-check"></i><span data-i18n="e_f5">API Testing completo (endpoints ilimitados)</span></div>
+          <div class="pricing-feature"><i class="fas fa-check pricing-check"></i><span data-i18n="e_f6">Scripts Playwright / Cypress (hasta 20 casos)</span></div>
+          <div class="pricing-feature"><i class="fas fa-check pricing-check"></i><span data-i18n="e_f7">Integración CI/CD básica</span></div>
+          <div class="pricing-feature"><i class="fas fa-check pricing-check"></i><span data-i18n="e_f8">Re-tests ilimitados · soporte prioritario</span></div>
+        </div>
+        <a href="https://wa.me/595993273296?text=Hola%20Miguel,%20me%20interesa%20el%20plan%20Enterprise" target="_blank" rel="noopener" class="pricing-btn pricing-btn-outline" data-i18n="e_btn">Contratar Enterprise</a>
+      </div>
+    </div>
+    <p class="text-center text-xs mt-10" style="color:var(--text-muted)">
+      <span data-i18n="pricing_custom">¿Necesitas algo personalizado?</span>
+      <a href="https://wa.me/595993273296" target="_blank" rel="noopener" class="font-semibold hover:underline ml-1" style="color:var(--accent)" data-i18n="pricing_custom_link">Hablemos por WhatsApp →</a>
+    </p>
+  </div>
+</section>
+
+<!-- PLATAFORMAS -->
+<section id="plataformas" class="platform-section py-20">
+  <div class="max-w-5xl mx-auto px-6">
+    <h3 class="text-center font-semibold uppercase text-sm tracking-[.2em] mb-10" style="color:var(--text-muted)" data-i18n="platforms_title">También puedes contratarme en</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <a href="https://www.upwork.com/freelancers/~014c750fb6ced1f388" target="_blank" rel="noopener" class="platform-card p-8 rounded-2xl text-center block">
+        <img src="https://cdn.worldvectorlogo.com/logos/upwork.svg" class="h-10 mx-auto mb-4" alt="Upwork"/>
+        <h4 class="font-bold text-xl">Upwork</h4>
+      </a>
+      <a href="https://es.fiverr.com/s/1qDvvP4" target="_blank" rel="noopener" class="platform-card p-8 rounded-2xl text-center block">
+        <img src="https://cdn.worldvectorlogo.com/logos/fiverr-1.svg" class="h-10 mx-auto mb-4" alt="Fiverr"/>
+        <h4 class="font-bold text-xl">Fiverr</h4>
+      </a>
+      <a href="https://www.freelancer.com/u/miguel352" target="_blank" rel="noopener" class="platform-card p-8 rounded-2xl text-center block">
+        <img src="https://cdn.worldvectorlogo.com/logos/freelancer-1.svg" class="h-10 mx-auto mb-4" alt="Freelancer"/>
+        <h4 class="font-bold text-xl">Freelancer</h4>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/595993273296" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- CONTACTO -->
+<section id="contacto" class="contact-section py-24 px-6">
+  <div class="max-w-2xl mx-auto">
+    <div class="text-center mb-12">
+      <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3" data-i18n="contact_eyebrow">Trabajemos juntos</p>
+      <h3 class="text-3xl md:text-4xl font-black text-white" data-i18n="contact_title">¿Tienes un proyecto?</h3>
+      <p class="text-slate-400 mt-3 text-sm max-w-md mx-auto" data-i18n="contact_sub">Cuéntame qué necesitas y te respondo en menos de 24 horas.</p>
+    </div>
+    <form id="contactForm" novalidate>
+      <div class="space-y-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <label class="contact-label" data-i18n="form_name">Nombre</label>
+            <input type="text" id="from_name" name="from_name" required class="contact-input" data-i18n-placeholder="form_name_ph" placeholder="Tu nombre completo"/>
+          </div>
+          <div>
+            <label class="contact-label" data-i18n="form_email">Email</label>
+            <input type="email" id="from_email" name="from_email" required class="contact-input" placeholder="tu@email.com"/>
+          </div>
+        </div>
+        <div>
+          <label class="contact-label" data-i18n="form_subject">Asunto</label>
+          <input type="text" id="subject" name="subject" class="contact-input" data-i18n-placeholder="form_subject_ph" placeholder="Ej: Necesito testing para mi app"/>
+        </div>
+        <div>
+          <label class="contact-label" data-i18n="form_message">Mensaje</label>
+          <textarea id="message" name="message" required rows="5" class="contact-input" style="resize:none;" data-i18n-placeholder="form_message_ph" placeholder="Cuéntame sobre tu proyecto..."></textarea>
+        </div>
+
+        <!-- CAPTCHA MATEMÁTICO -->
+        <div>
+          <label class="contact-label" data-i18n="captcha_label">Verificación de seguridad</label>
+          <div class="captcha-box" id="captchaBox">
+            <span class="captcha-question" id="captchaQuestion">3 + 5</span>
+            <span class="captcha-equals">=</span>
+            <input type="number" id="captchaAnswer" class="captcha-input" placeholder="?" autocomplete="off"/>
+            <button type="button" class="captcha-refresh" onclick="generateCaptcha()" title="Nueva pregunta">
+              <i class="fas fa-rotate-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" id="submitBtn" class="contact-btn">
+          <span id="btnText"><i class="fas fa-paper-plane mr-2"></i><span data-i18n="form_send">Enviar mensaje</span></span>
+          <span id="btnLoading" class="hidden"><i class="fas fa-spinner fa-spin mr-2"></i><span data-i18n="form_sending">Enviando...</span></span>
+        </button>
+        <div id="successMsg" class="alert-success hidden"></div>
+        <div id="errorMsg" class="alert-error hidden"></div>
+      </div>
+    </form>
+    <div class="flex items-center gap-4 my-10">
+      <div class="flex-1 h-px bg-slate-800"></div>
+      <span class="text-slate-600 text-xs uppercase tracking-widest" data-i18n="contact_or">o contáctame en</span>
+      <div class="flex-1 h-px bg-slate-800"></div>
+    </div>
+    <div class="text-center">
+      <a href="mailto:miguelangelesquivelriosqa@gmail.com" class="text-lg md:text-xl font-light text-slate-300 hover:text-blue-400 transition break-all">miguelangelesquivelriosqa@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer py-8 text-center border-t border-slate-800">
+  <div class="text-slate-600 text-xs" data-i18n="footer">© 2026 Miguel QA — Todos los derechos reservados</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+const i18n = {
+  es: {
+    nav_services:'Servicios',nav_testimonials:'Testimonios',nav_pricing:'Precios',nav_hire:'Dónde contratarme',nav_contact:'Contacto',dark_label:'Oscuro',
+    hero_badge:'Garantía de Calidad',hero_h1:'Encuentro bugs,',hero_h2:'antes de que tus usuarios los descubran.',
+    hero_desc:'Ayudo a desarrolladores y agencias a lanzar productos digitales impecables mediante testing manual y automatizado de alta precisión.',
+    hero_btn1:'Ver mis perfiles',hero_btn2:'Mis servicios',
+    stat_bugs:'Bugs encontrados',stat_projects:'Proyectos testeados',stat_years:'Años de experiencia',
+    services_title:'Mis Especialidades',
+    svc1_title:'QA Manual',svc1_desc:'Pruebas exhaustivas de interfaz y experiencia de usuario para detectar errores antes del lanzamiento.',
+    svc2_title:'Automatización',svc2_desc:'Automatización con Selenium, Playwright y Cypress para mejorar la eficiencia del testing.',
+    svc3_title:'API Testing',svc3_desc:'Validación de APIs usando Postman y pruebas de integración para garantizar estabilidad del backend.',
+    hacker_title:'Escaneo QA en tiempo real',hacker_sub:'Así es como trabajo cada proyecto.',
+    hck1:'$ iniciando análisis del proyecto...',hck2:'$ conectando con servidor de pruebas...',
+    hck3:'$ escaneando interfaz de usuario...',hck4:'$ validando endpoints de la API...',
+    hck5:'$ analizando comportamiento en móvil...',hck6:'⚠ Bug crítico detectado en checkout → prioridad alta',
+    hck7:'⚠ Inconsistencia UI en versión móvil → media',hck8:'✓ Reporte QA generado — 3 issues encontrados',
+    test_title:'Lo que dicen mis clientes',test_upwork_client:'Cliente Upwork',test_fl_client:'Cliente Freelancer',test_see_review:'Ver comentario original →',
+    pricing_badge:'Planes & Precios',pricing_title:'Elige el plan que se adapta<br/>a tu proyecto',
+    pricing_sub:'Precios competitivos basados en el mercado internacional. Sin costos ocultos.',
+    pricing_fixed:'Precio fijo',pricing_hourly:'Por hora',
+    s_desc:'Ideal para landing pages, apps simples o MVPs que necesitan una revisión rápida.',
+    s_f1:'Testing manual de hasta 10 pantallas',s_f2:'Reporte de bugs con capturas',s_f3:'Pruebas de flujos críticos (login, checkout)',
+    s_f4:'Compatibilidad: 2 navegadores',s_f5:'Entrega en 2–3 días hábiles',s_f6:'Testing en móvil',s_f7:'API Testing',s_f8:'Scripts de automatización',
+    s_btn:'Contratar Starter',pro_badge:'Más popular',
+    p_desc:'Para aplicaciones web y móviles que necesitan cobertura completa antes del lanzamiento.',
+    p_f1:'Testing manual de hasta 30 pantallas',p_f2:'Reporte detallado con severidad de bugs',p_f3:'Flujos completos + regresión',
+    p_f4:'Compatibilidad: 4 navegadores + móvil',p_f5:'API Testing con Postman (hasta 15 endpoints)',
+    p_f6:'Entrega en 4–5 días hábiles',p_f7:'1 ronda de re-test incluida',p_f8:'Scripts de automatización',p_btn:'Contratar Pro',
+    e_desc:'Para equipos y productos complejos que requieren automatización, CI/CD y cobertura máxima.',
+    e_f1:'Testing manual sin límite de pantallas',e_f2:'Reporte ejecutivo + métricas de calidad',e_f3:'Regresión completa + smoke testing',
+    e_f4:'Multi-navegador + iOS & Android',e_f5:'API Testing completo (endpoints ilimitados)',
+    e_f6:'Scripts Playwright / Cypress (hasta 20 casos)',e_f7:'Integración CI/CD básica',e_f8:'Re-tests ilimitados · soporte prioritario',e_btn:'Contratar Enterprise',
+    pricing_custom:'¿Necesitas algo personalizado?',pricing_custom_link:'Hablemos por WhatsApp →',
+    platforms_title:'También puedes contratarme en',
+    contact_eyebrow:'Trabajemos juntos',contact_title:'¿Tienes un proyecto?',contact_sub:'Cuéntame qué necesitas y te respondo en menos de 24 horas.',
+    form_name:'Nombre',form_name_ph:'Tu nombre completo',form_email:'Email',
+    form_subject:'Asunto',form_subject_ph:'Ej: Necesito testing para mi app',
+    form_message:'Mensaje',form_message_ph:'Cuéntame sobre tu proyecto: ¿qué necesitas testear, en qué plazo, cuál es tu presupuesto?',
+    form_send:'Enviar mensaje',form_sending:'Enviando...',
+    form_success:'✅ ¡Mensaje enviado con éxito! Te respondo pronto.',
+    form_error:'❌ Hubo un error al enviar. Por favor contáctame por WhatsApp.',
+    form_validation:'⚠️ Por favor completa nombre, email y mensaje.',
+    captcha_label:'Verificación de seguridad',captcha_error:'⚠️ Respuesta incorrecta. Intenta de nuevo.',
+    contact_or:'o contáctame en',footer:'© 2026 Miguel QA — Todos los derechos reservados',
+    suffix_project:'/ proyecto',suffix_hour:'/ hora',
+  },
+  en: {
+    nav_services:'Services',nav_testimonials:'Testimonials',nav_pricing:'Pricing',nav_hire:'Hire me on',nav_contact:'Contact',dark_label:'Dark',
+    hero_badge:'Quality Assurance',hero_h1:'I find bugs,',hero_h2:'before your users discover them.',
+    hero_desc:'I help developers and agencies ship flawless digital products through precise manual and automated testing.',
+    hero_btn1:'View my profiles',hero_btn2:'My services',
+    stat_bugs:'Bugs found',stat_projects:'Projects tested',stat_years:'Years of experience',
+    services_title:'My Specialties',
+    svc1_title:'Manual QA',svc1_desc:'Thorough UI and UX testing to detect issues before your product goes live.',
+    svc2_title:'Automation',svc2_desc:'Automation with Selenium, Playwright and Cypress to boost testing efficiency.',
+    svc3_title:'API Testing',svc3_desc:'API validation using Postman and integration tests to ensure backend stability.',
+    hacker_title:'Real-time QA scan',hacker_sub:'This is how I work every project.',
+    hck1:'$ starting project analysis...',hck2:'$ connecting to test server...',
+    hck3:'$ scanning user interface...',hck4:'$ validating API endpoints...',
+    hck5:'$ analyzing mobile behavior...',hck6:'⚠ Critical bug detected in checkout → high priority',
+    hck7:'⚠ UI inconsistency on mobile version → medium',hck8:'✓ QA report generated — 3 issues found',
+    test_title:'What my clients say',test_upwork_client:'Upwork Client',test_fl_client:'Freelancer Client',test_see_review:'View original review →',
+    pricing_badge:'Plans & Pricing',pricing_title:'Choose the plan that fits<br/>your project',
+    pricing_sub:'Competitive prices based on the international market. No hidden fees.',
+    pricing_fixed:'Fixed price',pricing_hourly:'Per hour',
+    s_desc:'Ideal for landing pages, simple apps or MVPs that need a quick and effective review.',
+    s_f1:'Manual testing up to 10 screens',s_f2:'Bug report with screenshots',s_f3:'Critical flow testing (login, checkout)',
+    s_f4:'Compatibility: 2 browsers',s_f5:'Delivery in 2–3 business days',s_f6:'Mobile testing',s_f7:'API Testing',s_f8:'Automation scripts',
+    s_btn:'Get Starter',pro_badge:'Most popular',
+    p_desc:'For web and mobile applications that need full coverage before launch.',
+    p_f1:'Manual testing up to 30 screens',p_f2:'Detailed report with bug severity',p_f3:'Full flows + regression',
+    p_f4:'Compatibility: 4 browsers + mobile',p_f5:'API Testing with Postman (up to 15 endpoints)',
+    p_f6:'Delivery in 4–5 business days',p_f7:'1 re-test round included',p_f8:'Automation scripts',p_btn:'Get Pro',
+    e_desc:'For teams and complex products requiring automation, CI/CD and maximum coverage.',
+    e_f1:'Unlimited screen manual testing',e_f2:'Executive report + quality metrics',e_f3:'Full regression + smoke testing',
+    e_f4:'Multi-browser + iOS & Android',e_f5:'Full API Testing (unlimited endpoints)',
+    e_f6:'Playwright / Cypress scripts (up to 20 cases)',e_f7:'Basic CI/CD integration',e_f8:'Unlimited re-tests · priority support',e_btn:'Get Enterprise',
+    pricing_custom:'Need something custom?',pricing_custom_link:"Let's talk on WhatsApp →",
+    platforms_title:'You can also hire me on',
+    contact_eyebrow:"Let's work together",contact_title:'Got a project?',contact_sub:"Tell me what you need and I'll get back to you within 24 hours.",
+    form_name:'Name',form_name_ph:'Your full name',form_email:'Email',
+    form_subject:'Subject',form_subject_ph:'E.g: I need testing for my app',
+    form_message:'Message',form_message_ph:'Tell me about your project: what needs testing, timeline, and budget?',
+    form_send:'Send message',form_sending:'Sending...',
+    form_success:"✅ Message sent! I'll get back to you soon.",
+    form_error:'❌ Failed to send. Please reach me on WhatsApp.',
+    form_validation:'⚠️ Please fill in name, email and message.',
+    captcha_label:'Security verification',captcha_error:'⚠️ Wrong answer. Please try again.',
+    contact_or:'or contact me at',footer:'© 2026 Miguel QA — All rights reserved',
+    suffix_project:'/ project',suffix_hour:'/ hour',
+  }
+};
+
+let currentLang = 'es';
+let currentPricingMode = 'fixed';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  ['btnES','btnEN','btnESm','btnENm'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.toggle('active', (id.includes('ES') && lang==='es') || (id.includes('EN') && lang==='en'));
+  });
+  const els = document.querySelectorAll('[data-i18n]');
+  els.forEach(el => el.classList.add('lang-fade'));
+  setTimeout(() => {
+    els.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (i18n[lang][key] !== undefined) el.innerHTML = i18n[lang][key];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (i18n[lang][key]) el.placeholder = i18n[lang][key];
+    });
+    setPricing(currentPricingMode);
+    els.forEach(el => el.classList.remove('lang-fade'));
+  }, 150);
+}
+
+emailjs.init("S3fDYzyt2eFJktxPT");
+
+const html = document.documentElement;
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) enableDark();
+function enableDark() {
+  html.classList.replace('light','dark');
+  document.getElementById('darkIcon').className = 'fas fa-sun';
+  document.getElementById('darkIconMobile').className = 'fas fa-sun';
+  document.getElementById('darkLabel').textContent = currentLang==='es' ? 'Claro' : 'Light';
+}
+function enableLight() {
+  html.classList.replace('dark','light');
+  document.getElementById('darkIcon').className = 'fas fa-moon';
+  document.getElementById('darkIconMobile').className = 'fas fa-moon';
+  document.getElementById('darkLabel').textContent = currentLang==='es' ? 'Oscuro' : 'Dark';
+}
+function toggleDark() { html.classList.contains('dark') ? enableLight() : enableDark(); }
+document.getElementById('darkToggle').addEventListener('click', toggleDark);
+document.getElementById('darkToggleMobile').addEventListener('click', toggleDark);
+
+document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('open'));
+function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+new Swiper('.mySwiper', {
+  slidesPerView:1, spaceBetween:24, loop:true,
+  autoplay:{ delay:4500, disableOnInteraction:false },
+  pagination:{ el:'.swiper-pagination', clickable:true },
+  breakpoints:{ 768:{ slidesPerView:2, spaceBetween:24 } }
+});
+
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target, target = +el.getAttribute('data-target');
+    let count = 0, inc = target / 120;
+    const tick = () => { count = Math.min(count+inc, target); el.textContent = Math.ceil(count); if (count < target) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+    counterObserver.unobserve(el);
+  });
+}, { threshold:0.5 });
+document.querySelectorAll('.counter').forEach(c => counterObserver.observe(c));
+
+let hackerTriggered = false;
+const hackerObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !hackerTriggered) {
+      hackerTriggered = true;
+      document.querySelectorAll('.hacker-line').forEach(l => l.classList.add('show'));
+    }
+  });
+}, { threshold:0.3 });
+const hb = document.querySelector('.hacker-box');
+if (hb) hackerObserver.observe(hb);
+
+const pricingData = {
+  fixed:  { starter:'120', pro:'280', enterprise:'550' },
+  hourly: { starter:'15',  pro:'20',  enterprise:'28'  }
+};
+function setPricing(mode) {
+  currentPricingMode = mode;
+  const suffix = mode==='fixed' ? i18n[currentLang].suffix_project : i18n[currentLang].suffix_hour;
+  ['starter','pro','enterprise'].forEach(plan => {
+    document.getElementById('price-'+plan).textContent = pricingData[mode][plan];
+    document.getElementById('suffix-'+plan).textContent = suffix;
+  });
+  const btnF = document.getElementById('toggleFixed');
+  const btnH = document.getElementById('toggleHourly');
+  if (mode==='fixed') {
+    btnF.style.cssText = 'background:var(--accent);color:white;padding:8px 20px;border-radius:999px;font-size:14px;font-weight:700;';
+    btnH.style.cssText = 'background:var(--bg-alt);color:var(--text-muted);border:1px solid var(--border);padding:8px 20px;border-radius:999px;font-size:14px;font-weight:700;';
+  } else {
+    btnH.style.cssText = 'background:var(--accent);color:white;padding:8px 20px;border-radius:999px;font-size:14px;font-weight:700;';
+    btnF.style.cssText = 'background:var(--bg-alt);color:var(--text-muted);border:1px solid var(--border);padding:8px 20px;border-radius:999px;font-size:14px;font-weight:700;';
+  }
+}
+
+/* MATH CAPTCHA */
+let captchaCorrect = 0;
+function generateCaptcha() {
+  const ops = ['+', '-', 'x'];
+  const op = ops[Math.floor(Math.random() * ops.length)];
+  let a, b;
+  if (op === '+') {
+    a = Math.floor(Math.random()*10)+1;
+    b = Math.floor(Math.random()*10)+1;
+    captchaCorrect = a + b;
+  } else if (op === '-') {
+    a = Math.floor(Math.random()*10)+5;
+    b = Math.floor(Math.random()*a)+1;
+    captchaCorrect = a - b;
+  } else {
+    a = Math.floor(Math.random()*5)+1;
+    b = Math.floor(Math.random()*5)+1;
+    captchaCorrect = a * b;
+  }
+  document.getElementById('captchaQuestion').textContent = a + ' ' + op + ' ' + b;
+  document.getElementById('captchaAnswer').value = '';
+  document.getElementById('captchaBox').classList.remove('error');
+}
+generateCaptcha();
+
+/* CONTACT FORM */
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const btnText = document.getElementById('btnText');
+  const btnLoad = document.getElementById('btnLoading');
+  const successMsg = document.getElementById('successMsg');
+  const errorMsg = document.getElementById('errorMsg');
+  const lang = currentLang;
+
+  successMsg.classList.add('hidden');
+  errorMsg.classList.add('hidden');
+
+  const name    = document.getElementById('from_name').value.trim();
+  const email   = document.getElementById('from_email').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  if (!name || !email || !message) {
+    errorMsg.textContent = i18n[lang].form_validation;
+    errorMsg.classList.remove('hidden');
+    return;
+  }
+
+  const userAnswer = parseInt(document.getElementById('captchaAnswer').value.trim(), 10);
+  const captchaBox = document.getElementById('captchaBox');
+  if (isNaN(userAnswer) || userAnswer !== captchaCorrect) {
+    captchaBox.classList.add('error');
+    errorMsg.textContent = i18n[lang].captcha_error;
+    errorMsg.classList.remove('hidden');
+    generateCaptcha();
+    return;
+  }
+  captchaBox.classList.remove('error');
+
+  btn.disabled = true;
+  btnText.classList.add('hidden');
+  btnLoad.classList.remove('hidden');
+
+  try {
+    await emailjs.send('service_c9dxcns', 'template_cdgtgdp', {
+      from_name:  name,
+      from_email: email,
+      subject:    document.getElementById('subject').value.trim() || (lang==='en' ? 'New contact from website' : 'Nuevo contacto desde la web'),
+      message:    message,
+      reply_to:   email
+    });
+    successMsg.textContent = i18n[lang].form_success;
+    successMsg.classList.remove('hidden');
+    document.getElementById('contactForm').reset();
+    generateCaptcha();
+    setTimeout(() => successMsg.classList.add('hidden'), 6000);
+  } catch(err) {
+    console.error(err);
+    errorMsg.textContent = i18n[lang].form_error;
+    errorMsg.classList.remove('hidden');
+  }
+
+  btn.disabled = false;
+  btnText.classList.remove('hidden');
+  btnLoad.classList.add('hidden');
+});
+</script>
+</body>
+</html>
